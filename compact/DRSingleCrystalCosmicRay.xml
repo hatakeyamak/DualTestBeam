@@ -1,6 +1,32 @@
-
+<!-- ====================================================================== -->
+<!--                                                                        -->
+<!--    XML description of the complete SCEPCAL IDEA detector               -->
+<!--    of the SCEPCAL IDEA collider detector design.                       -->
+<!--                                                                        -->
+<!--    Contained are the required                                          -->
+<!--      ++ global constants used uniquely by this module                  -->
+<!--      ++ visualization attributes                                       -->
+<!--      ++ the definition of the readout structure and the                -->
+<!--         readout segmentation (if necessary)                            -->
+<!--      ++ the include statements for the sensitive detectors and         -->
+<!--         the corresponding support structure(s)                         -->
+<!--                                                                        -->
+<!--                                                                        -->
+<!--   @author  M.Frank                                                     -->
+<!--   @date    14/11/2014                                                  -->
+<!--                                                                        -->
+<!-- ====================================================================== -->
 
 <lccdd>
+
+  <info name="SCEPCAL with IDEA"
+        title="SCEPCAL with IDEA"
+        author="Sarah Eno"
+        url="https://twiki.cern.ch/twiki/bin/view/CLIC/xxx"
+        status="development"
+        version="$Id: compact.xml 1374 2014-11-05 10:49:55Z markus.frank@cern.ch $">
+    <comment>The compact format for the SCEPCAL IDEA</comment>        
+  </info>
 
 
 <!--  1 eV is 1240 nm
@@ -9,126 +35,9 @@
       4 eV is 309 nm
       5 eV is 238 nm
 -->
- 
+
+ <!--Temporary change to 1.37 ~ RI of teflon-->
   <properties>
-
-
-<!--Varying this to first 1.3 instead of 1.4658-->
-    <!--Changing to 1.43-->
-    <!--Temporarily Changing to 1.55 to check -90 deg counts-->
-    <matrix name="RINDEX__Silicone" coldim="2" values="  
-     1.1*eV 1.43
-     1.500*eV 1.43
-     1.750*eV 1.43
-     2.0*eV 1.43
-     2.034*eV 1.43
-     2.068*eV 1.43
-     2.103*eV 1.43
-     2.139*eV 1.43
-     2.177*eV 1.43
-     2.216*eV 1.43
-     2.256*eV 1.43
-     2.298*eV 1.43
-     2.341*eV 1.43
-     2.386*eV 1.43
-     2.433*eV 1.43
-     2.481*eV 1.43
-     2.532*eV 1.43
-     2.585*eV 1.43
-     2.640*eV 1.43
-     2.697*eV 1.43
-     2.757*eV 1.43
-     2.820*eV 1.43
-     2.885*eV 1.43
-     2.954*eV 1.43
-     3.026*eV 1.43
-     3.102*eV 1.43
-     3.181*eV 1.43
-     3.265*eV 1.43
-     3.353*eV 1.43
-     3.446*eV 1.43
-     3.545*eV 1.43
-     3.649*eV 1.43
-     3.760*eV 1.43
-     3.877*eV 1.43
-     4.002*eV 1.43
-     4.136*eV 1.43
-     6.0*eV 1.43
-    "/>    
-
-    <matrix name="RINDEX__ResWin" coldim="2" values="  
-    1.1*eV 1.54
-    1.77*eV 1.55
-    2.066*eV 1.55
-    2.47*eV 1.56
-    2.75*eV 1.57
-    3.099*eV 1.58
-    4.002*eV 1.60
-    6.0*eV 1.65
-    "/>
-
-
-    <matrix name="RINDEX__Photocathode" coldim="2" values="  
-    1.1*eV 3.8
-    1.77*eV 3.8
-    2.066*eV 3.8
-    2.47*eV 3.8
-    2.75*eV 3.8
-    3.099*eV 3.8
-    4.002*eV 3.8
-    6.0*eV 3.8
-    "/>
-
-    
-
-
-    
-    <matrix name="RINDEX__quartz" coldim="2" values="
- 1.033*eV  1.4500069615101
-  1.069*eV  1.4495710901504
-  1.107*eV  1.4491214616538
-  1.146*eV  1.448668310738
-  1.186*eV 1.4482096590065
-  1.228*eV 1.4477322458328
-  1.271*eV 1.4472455774929
-  1.316*eV 1.4467363524093
-  1.362*eV 1.4462138519129
-  1.410*eV 1.445664578157
-  1.460*eV 1.4450861470109
-  1.512*eV 1.4444759883488
-  1.565*eV 1.4438434020915
-  1.620*eV 1.4431739285381
-  1.677*eV 1.4424645759259
-  1.736*eV 1.4417121733672
-  1.797*eV  1.4409133669095
-  1.861*eV 1.4400509385522
-  1.926*eV 1.43914806608
-  1.994*eV  1.4381729429417
-  2.064*eV 1.4371349603433
-  2.137*eV 1.4360139618555
-  2.212*eV 1.4348196176837
-  2.290*eV 1.433529881253
-  2.371*eV  1.4321372109342
-  2.454*eV 1.4306516985468
-  2.541*eV 1.4290287283802
-  2.630*eV 1.427296093753
-  2.723*eV 1.4254044329951
-  2.819*eV 1.4233613684394
-  2.918*eV 1.4211544161909
-  3.021*eV 1.4187459519934
-  3.128*eV 1.416117293379
-  3.238*eV 1.4132741569442
-  3.352*eV 1.4101696832452
-  3.470*eV 1.4067782146466
-  3.592*eV 1.4030708962299
-  3.719*eV 1.3989819997456
-  3.850*eV 1.3945035722002
-  3.986*eV  1.3895553417944
-  4.126*eV 1.3841208059058
-    "/>
-
-
-
     <matrix name="RINDEX__Air" coldim="2" values="  
      1.1*eV 1.
      1.500*eV 1.
@@ -201,6 +110,8 @@
      3.9*eV  2.82141
     
     "/>
+
+    <!--This is the same as that of PbWO4, assign to it the silicone grease RI-->
     <matrix name="RINDEX__kill" coldim="2" values="  
      1.1*eV  2.19414
      1.2*eV  2.19762
@@ -241,6 +152,13 @@
     
     "/>
 
+    <matrix name="RINDEX__test_PbF2" coldim="2" values="  
+    2.066*eV 1.765
+    2.13*eV 1.77
+    2.256*eV 1.773    
+
+    "/>
+
     <matrix name="RINDEX__test_kill" coldim="2" values="  
      2.1*eV  2.25053    
      2.2*eV  2.25968
@@ -264,45 +182,100 @@
      4.0650*eV 2.4104
     "/>
 
+    <!--Varying this to first 1.3 instead of 1.4658-->
+    <!--Changing to 1.43-->
+    <!--Temporarily Changing to 1.55 to check -90 deg counts-->
     <matrix name="RINDEX__Silicone" coldim="2" values="  
-     1.1*eV 1.4658
-     1.500*eV 1.4658
-     1.750*eV 1.4658
-     2.0*eV 1.4658
-     2.034*eV 1.4658
-     2.068*eV 1.4658
-     2.103*eV 1.4658
-     2.139*eV 1.4658
-     2.177*eV 1.4658
-     2.216*eV 1.4658
-     2.256*eV 1.4658
-     2.298*eV 1.4658
-     2.341*eV 1.4658
-     2.386*eV 1.4658
-     2.433*eV 1.4658
-     2.481*eV 1.4658
-     2.532*eV 1.4658
-     2.585*eV 1.4658
-     2.640*eV 1.4658
-     2.697*eV 1.4658
-     2.757*eV 1.4658
-     2.820*eV 1.4658
-     2.885*eV 1.4658
-     2.954*eV 1.4658
-     3.026*eV 1.4658
-     3.102*eV 1.4658
-     3.181*eV 1.4658
-     3.265*eV 1.4658
-     3.353*eV 1.4658
-     3.446*eV 1.4658
-     3.545*eV 1.4658
-     3.649*eV 1.4658
-     3.760*eV 1.4658
-     3.877*eV 1.4658
-     4.002*eV 1.4658
-     4.136*eV 1.4658
-     6.0*eV 1.4658
+     1.1*eV 1.43
+     1.500*eV 1.43
+     1.750*eV 1.43
+     2.0*eV 1.43
+     2.034*eV 1.43
+     2.068*eV 1.43
+     2.103*eV 1.43
+     2.139*eV 1.43
+     2.177*eV 1.43
+     2.216*eV 1.43
+     2.256*eV 1.43
+     2.298*eV 1.43
+     2.341*eV 1.43
+     2.386*eV 1.43
+     2.433*eV 1.43
+     2.481*eV 1.43
+     2.532*eV 1.43
+     2.585*eV 1.43
+     2.640*eV 1.43
+     2.697*eV 1.43
+     2.757*eV 1.43
+     2.820*eV 1.43
+     2.885*eV 1.43
+     2.954*eV 1.43
+     3.026*eV 1.43
+     3.102*eV 1.43
+     3.181*eV 1.43
+     3.265*eV 1.43
+     3.353*eV 1.43
+     3.446*eV 1.43
+     3.545*eV 1.43
+     3.649*eV 1.43
+     3.760*eV 1.43
+     3.877*eV 1.43
+     4.002*eV 1.43
+     4.136*eV 1.43
+     6.0*eV 1.43
     "/>    
+
+    <matrix name="RINDEX__ResWin" coldim="2" values="  
+    1.1*eV 1.54
+    1.77*eV 1.55
+    2.066*eV 1.55
+    2.47*eV 1.56
+    2.75*eV 1.57
+    3.099*eV 1.58
+    4.002*eV 1.60
+    6.0*eV 1.65
+    "/>    
+
+    <matrix name="RINDEX__Teflon" coldim="2" values="  
+     1.1*eV 1.37
+     1.500*eV 1.37
+     1.750*eV 1.37
+     2.0*eV 1.37
+     2.034*eV 1.37
+     2.068*eV 1.37
+     2.103*eV 1.37
+     2.139*eV 1.37
+     2.177*eV 1.37
+     2.216*eV 1.37
+     2.256*eV 1.37
+     2.298*eV 1.37
+     2.341*eV 1.37
+     2.386*eV 1.37
+     2.433*eV 1.37
+     2.481*eV 1.37
+     2.532*eV 1.37
+     2.585*eV 1.37
+     2.640*eV 1.37
+     2.697*eV 1.37
+     2.757*eV 1.37
+     2.820*eV 1.37
+     2.885*eV 1.37
+     2.954*eV 1.37
+     3.026*eV 1.37
+     3.102*eV 1.37
+     3.181*eV 1.37
+     3.265*eV 1.37
+     3.353*eV 1.37
+     3.446*eV 1.37
+     3.545*eV 1.37
+     3.649*eV 1.37
+     3.760*eV 1.37
+     3.877*eV 1.37
+     4.002*eV 1.37
+     4.136*eV 1.37
+     6.0*eV 1.37
+
+     "/>   
 
     <matrix name="RINDEX__PbF2" coldim="2" values="    
     1.*eV 1.735
@@ -315,125 +288,142 @@
     3.1*eV 1.818
     4.*eV 1.89
     4.9*eV 1.90
+    6.2*eV 1.99 
     
-    "/>    
+    "/>   
+<!-- 6.2 eV is extra added for 200 nm Cerenkov generation-->
+    <!-- Only dummy for changing as suggested by Dan Levine-->
+    <!--<matrix name="RINDEX__PbF2" coldim="2" values="    
+    1.*eV 1.4335
+    1.24*eV 1.44
+    1.377*eV 1.443
+    1.55*eV 1.447
+    1.77*eV 1.452
+    2.066*eV 1.46
+    2.48*eV 1.476
+    3.1*eV 1.5
+    4.*eV 1.59
+    4.9*eV 1.6
+    6.2*eV 1.7 
+    
+    "/>-->
 
-    
+
+    <!-- This has to be shifted towards the left i.e. 280 nm-->
     <matrix name="AbsLen_PbF2" coldim="2" values="    
-    1.37778*eV 72.729*cm
-    1.40909*eV 72.729*cm
-    1.44186*eV 72.729*cm
-    1.45882*eV 79.9821*cm
-    1.47619*eV 86.3016*cm
-    1.48503*eV 71.3752*cm
-    1.49398*eV 75.2307*cm
-    1.50303*eV 64.5178*cm
-    1.5122*eV 78.8825*cm
-    1.52147*eV	55.4496*cm
-    1.53086*eV	79.9821*cm
-    1.54037*eV	93.8506*cm
-    1.55*eV	79.9821*cm
-    1.55975*eV	46.3043*cm
-    1.56962*eV	79.9821*cm
-    1.57962*eV	59.576*cm
-    1.58974*eV	67.2641*cm
-    1.6*eV	72.729*cm
-    1.61039*eV	73.2717*cm
-    1.62092*eV	63.7631*cm
-    1.63158*eV	54.2757*cm
-    1.64238*eV	73.0837*cm
-    1.65333*eV	79.9821*cm
-    1.66443*eV	64.2004*cm
-    1.67568*eV	73.2557*cm
-    1.68707*eV	57.2838*cm
-    1.69863*eV	66.8199*cm
-    1.71034*eV	63.3246*cm
-    1.72222*eV	57.9953*cm
-    1.73427*eV	72.4578*cm
-    1.74648*eV	67.9925*cm
-    1.75887*eV	80.9302*cm
-    1.77143*eV	69.723*cm
-    1.78417*eV	57.4274*cm
-    1.7971*eV	66.7979*cm
-    1.81022*eV	99.6469*cm
-    1.82353*eV	77.8907*cm
-    1.83704*eV	58.9811*cm
-    1.85075*eV	68.2036*cm
-    1.86466*eV	61.4903*cm
-    1.87879*eV	61.2425*cm
-    1.89313*eV	55.88*cm
-    1.90769*eV	60.0388*cm
-    1.92248*eV	57.3264*cm
-    1.9375*eV	68.224*cm
-    1.95276*eV	62.087*cm
-    1.96825*eV	60.7574*cm
-    1.984*eV	51.377*cm
-    2.*eV	61.0301*cm
-    2.01626*eV	60.5708*cm
-    2.03279*eV	66.3732*cm
-    2.04959*eV	56.9737*cm
-    2.06667*eV	75.9523*cm
-    2.08403*eV	61.8363*cm
-    2.10169*eV	68.1626*cm
-    2.11966*eV	59.6102*cm
-    2.13793*eV	63.3495*cm
-    2.15652*eV	65.9046*cm
-    2.17544*eV	54.137*cm
-    2.19469*eV	58.6942*cm
-    2.21429*eV	59.6202*cm
-    2.23423*eV	57.4758*cm
-    2.25455*eV	54.5677*cm
-    2.27523*eV	51.8743*cm
-    2.2963*eV	52.8427*cm
-    2.31776*eV	52.769*cm
-    2.33962*eV	52.0828*cm
-    2.3619*eV	55.1011*cm
-    2.38462*eV	52.6645*cm
-    2.40777*eV	47.7234*cm
-    2.43137*eV	48.3831*cm
-    2.45545*eV	49.408*cm
-    2.48*eV 46.7447*cm
-    2.50505*eV	42.6827*cm
-    2.53061*eV	42.1471*cm
-    2.5567*eV	46.3217*cm
-    2.58333*eV	46.691*cm
-    2.61053*eV	42.5735*cm
-    2.6383*eV	42.9812*cm
-    2.66667*eV	42.2051*cm
-    2.69565*eV	41.3414*cm
-    2.72527*eV	37.9887*cm
-    2.75556*eV	38.9232*cm
-    2.78652*eV	38.3074*cm
-    2.81818*eV	37.5402*cm
-    2.85057*eV	34.9485*cm
-    2.88372*eV	37.3998*cm
-    2.91765*eV	36.0416*cm
-    2.95238*eV	39.6534*cm
-    2.98795*eV	33.6949*cm
-    3.02439*eV	35.3571*cm
-    3.06173*eV	32.7523*cm
-    3.1*eV	32.2734*cm
-    3.13924*eV	28.8729*cm
-    3.17949*eV	33.4029*cm
-    3.22078*eV	28.8477*cm
-    3.26316*eV	20*cm
-    3.30667*eV	10*cm
-    3.35135*eV	9*cm
-    3.39726*eV	8*cm
-    3.44444*eV	7*cm
-    3.49296*eV	6*cm
-    3.54286*eV	5*cm
-    3.5942*eV	4*cm
-    3.64706*eV	3*cm
-    3.70149*eV	2*cm
-    3.75758*eV	1*cm
-    3.81538*eV	0.5*cm
-    3.875*eV	0.1*cm
-    3.93651*eV	0*cm
-    4*eV	0*cm
-    4.06557*eV	0*cm
-
+0.999872476*eV 74.90456929*cm
+1.127128973*eV 74.90456929*cm
+1.647309468*eV 73.43691501*cm
+1.674037923*eV 74.41530713*cm
+1.69499219*eV 74.90456929*cm
+1.726049464*eV 75.2307*cm
+1.752577282*eV 75.55683071*cm
+1.7858016*eV 75.39376535*cm
+1.824909497*eV 75.2307*cm
+1.848260617*eV 74.90456929*cm
+1.875458612*eV 74.57837249*cm
+1.893487907*eV 73.76304572*cm
+1.915247329*eV 72.7845875*cm
+1.951473676*eV 74.08917643*cm
+1.987272254*eV 73.76304572*cm
+2.024408781*eV 73.76304572*cm
+2.062960036*eV 72.94765285*cm
+2.103007719*eV 72.94765285*cm
+2.134079031*eV 72.7845875*cm
+2.166082251*eV 72.29539144*cm
+2.201294011*eV 71.80619537*cm
+2.237669491*eV 70.99080251*cm
+2.270499031*eV 70.6646718*cm
+2.304305791*eV 70.01241038*cm
+2.34673554*eV 69.52314822*cm
+2.393397916*eV 68.70782146*cm
+2.439204651*eV 67.89242859*cm
+2.49252072*eV 66.75090501*cm
+2.533322279*eV 65.93557163*cm
+2.584698489*eV 65.12021182*cm
+2.644642806*eV 63.8156295*cm
+2.697321436*eV 62.34798182*cm
+2.748650152*eV 60.88032754*cm
+2.801970285*eV 58.76039202*cm
+2.87255372*eV 56.80352184*cm
+2.930840296*eV 54.35743578*cm
+2.983302851*eV 52.07442168*cm
+3.054809709*eV 48.97604776*cm
+3.116322969*eV 46.85611223*cm
+3.199149408*eV 44.08388224*cm
+3.26667725*eV 41.80086814*cm
+3.337117326*eV 39.35478208*cm
+3.432275393*eV 36.09333619*cm
+3.521533716*eV 33.15803424*cm
+3.621602547*eV 30.05966032*cm
+3.746863098*eV 26.30899855*cm
+3.874159591*eV 23.04755266*cm
+3.99561802*eV 19.62303482*cm
+4.1249386*eV 16.19851697*cm
+4.237894721*eV 11.79556073*cm
+4.348467005*eV 8.044898962*cm
+4.455782115*eV 3.478876048*cm
+4.53031577*eV 0*cm
+    
     "/>
+
+<!--10 times the 'original' absorption length-->
+<!--<matrix name="AbsLen_PbF2" coldim="2" values="    
+0.999872476*eV 749.0456929*cm
+1.127128973*eV 749.0456929*cm
+1.647309468*eV 734.3691501*cm
+1.674037923*eV 744.1530713*cm
+1.69499219*eV 749.0456929*cm
+1.726049464*eV 752.307*cm
+1.752577282*eV 755.5683071*cm
+1.7858016*eV 753.9376535*cm
+1.824909497*eV 752.307*cm
+1.848260617*eV 749.0456929*cm
+1.875458612*eV 745.7837249*cm
+1.893487907*eV 737.6304572*cm
+1.915247329*eV 727.845875*cm
+1.951473676*eV 740.8917643*cm
+1.987272254*eV 737.6304572*cm
+2.024408781*eV 737.6304572*cm
+2.062960036*eV 729.4765285*cm
+2.103007719*eV 729.4765285*cm
+2.134079031*eV 727.845875*cm
+2.166082251*eV 722.9539144*cm
+2.201294011*eV 718.0619537*cm
+2.237669491*eV 709.9080251*cm
+2.270499031*eV 706.646718*cm
+2.304305791*eV 700.1241038*cm
+2.34673554*eV 695.2314822*cm
+2.393397916*eV 687.0782146*cm
+2.439204651*eV 678.9242859*cm
+2.49252072*eV 667.5090501*cm
+2.533322279*eV 659.3557163*cm
+2.584698489*eV 651.2021182*cm
+2.644642806*eV 638.156295*cm
+2.697321436*eV 623.4798182*cm
+2.748650152*eV 608.8032754*cm
+2.801970285*eV 587.6039202*cm
+2.87255372*eV 568.0352184*cm
+2.930840296*eV 543.5743578*cm
+2.983302851*eV 520.7442168*cm
+3.054809709*eV 489.7604776*cm
+3.116322969*eV 468.5611223*cm
+3.199149408*eV 440.8388224*cm
+3.26667725*eV 418.0086814*cm
+3.337117326*eV 393.5478208*cm
+3.432275393*eV 360.9333619*cm
+3.521533716*eV 331.5803424*cm
+3.621602547*eV 300.5966032*cm
+3.746863098*eV 263.0899855*cm
+3.874159591*eV 230.4755266*cm
+3.99561802*eV 196.2303482*cm
+4.1249386*eV 161.9851697*cm
+4.237894721*eV 117.9556073*cm
+4.348467005*eV 80.44898962*cm
+4.455782115*eV 34.78876048*cm
+4.53031577*eV 0*cm
+    
+    "/>-->
 
     <matrix name="RINDEX__UG11_filter" coldim="2" values="  
      1.1*eV 1.56
@@ -812,23 +802,82 @@
     
     "/>    
     
+    <matrix name="Spec_lobe" coldim="2" values="
+    1.0*eV 0.25
+    6.0*eV 0.25
+    "/>    
+
+    <matrix name="Spec_spike" coldim="2" values="
+    1.0*eV 0.75
+    6.0*eV 0.75
+    "/>    
+
+    <matrix name="Ref_gndmet" coldim="2" values="
+    1.0*eV 0.95
+    6.0*eV 0.95
+    "/>    
+
+    <matrix name="Spec_lobe_1" coldim="2" values="
+    1.0*eV 0.0
+    6.0*eV 0.0
+    "/>    
+
+    <matrix name="Spec_spike_1" coldim="2" values="
+    1.0*eV 1.0
+    6.0*eV 1.0
+    "/>    
+
+    <matrix name="Ref_gndmet_1" coldim="2" values="
+    1.0*eV 1.0
+    6.0*eV 1.0
+    "/>    
+
+    <!--<matrix name="Ref_gndmet_1" coldim="2" values="
+    1.0*eV 0.0
+    6.0*eV 0.0
+    "/>-->
+
+    <matrix name="Ref_sigmaalpha" coldim="2" values="
+    1.0*eV 90.0
+    6.0*eV 90.0
+    "/>    
 
     </properties>
 
 
-
-
   <surfaces>
-    <opticalsurface name="/world/DRCrystal#mirrorSurface" finish="polished" model="glisur" type="dielectric_metal">
+    <!--<opticalsurface name="/world/DRCrystal#mirrorSurface" finish="polished" model="glisur" type="dielectric_metal">
+    </opticalsurface>-->
+    <opticalsurface name="/world/DRCrystal#mirrorSurface" finish="ground" model="glisur" type="dielectric_metal">
     </opticalsurface>
+
+    <opticalsurface name="/world/DRCrystal#teflonSurface" finish="PolishedTeflon_LUT" model="DAVIS" type="dielectric_LUTDAVIS">
+    </opticalsurface> 
+    <!--<opticalsurface name="/world/DRCrystal#teflonairSurface" finish="polishedteflonair" model="glisur" type="dielectric_dielectric">
+    </opticalsurface>   -->
+    
     <opticalsurface name="/world/DRCrystal#tyvekSurface" finish="etchedtyvekair" model="LUT" type="dielectric_LUT" value="1.0">
+    </opticalsurface>  
+    <!--<opticalsurface name="/world/DRCrystal#dielectricSurface" finish="polished" model="glisur" type="dielectric_dielectric">
+    </opticalsurface>-->
+
+    <opticalsurface name="/world/DRCrystal#dielectricSurface" finish="ground" model="unified" type="dielectric_metal" >
+
+    <property name="SPECULARLOBECONSTANT"     ref="Spec_lobe"/>
+    <property name="SPECULARSPIKECONSTANT"     ref="Spec_spike"/>
+    <!--<property name="SigmaAlpha" ref="Ref_sigmaalpha"/>-->
+    <property name="REFLECTIVITY"     ref="Ref_gndmet"/>
     </opticalsurface>
-    <opticalsurface name="/world/DRCrystal#dielectricSurface" finish="polished" model="glisur" type="dielectric_dielectric">
+
+
+    <opticalsurface name="/world/DRCrystal#cookieSurface" finish="ground" model="unified" type="dielectric_dielectric" >
+
+    <property name="SPECULARLOBECONSTANT"     ref="Spec_lobe_1"/>
+    <property name="SPECULARSPIKECONSTANT"     ref="Spec_spike_1"/>
+    <!--<property name="SigmaAlpha" ref="Ref_sigmaalpha"/>-->
+    <property name="REFLECTIVITY"     ref="Ref_gndmet_1"/>
     </opticalsurface>
-    <opticalsurface name="/world/DRFiber#mirrorSurface" finish="polished" model="glisur" type="dielectric_metal">
-    </opticalsurface>
-    <opticalsurface name="/world/DRFtubeFiber#mirrorSurface" finish="polished" model="glisur" type="dielectric_metal">
-    </opticalsurface>
+
   </surfaces>
 
 
@@ -858,146 +907,71 @@
 
 
 
-
-
-    <material name="killMediaphotocathode">
+    <material name="kill_SiPM_left_1">
       <D type="density" unit="g/cm3" value="0.0012"/>
       <fraction n="0.754" ref="N"/>
       <fraction n="0.234" ref="O"/>
       <fraction n="0.012" ref="Ar"/>
-      <property name="RINDEX"        ref="RINDEX__Photocathode"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
     </material>
 
-    <material name="killMedia1">
+    <material name="kill_SiPM_left_2">
       <D type="density" unit="g/cm3" value="0.0012"/>
       <fraction n="0.754" ref="N"/>
       <fraction n="0.234" ref="O"/>
       <fraction n="0.012" ref="Ar"/>
-      <property name="RINDEX"        ref="RINDEX__PbWO4"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
     </material>
-
-<!-- for ps -->
-    <material name="killMedia2">
+    
+    <material name="kill_SiPM_left_3">
       <D type="density" unit="g/cm3" value="0.0012"/>
       <fraction n="0.754" ref="N"/>
       <fraction n="0.234" ref="O"/>
       <fraction n="0.012" ref="Ar"/>
-      <property name="RINDEX"        ref="RI_PS"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
     </material>
-
-
-
-<!-- for quartx  -->
-    <material name="killMedia3">
+    
+    <material name="kill_SiPM_left_4">
       <D type="density" unit="g/cm3" value="0.0012"/>
       <fraction n="0.754" ref="N"/>
       <fraction n="0.234" ref="O"/>
       <fraction n="0.012" ref="Ar"/>
-      <property name="RINDEX"        ref="RINDEX__quartz"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
     </material>
 
 
-<!-- for edge detector   -->
-    <material name="BlackHole">
+
+    <material name="kill_SiPM_right_1">
       <D type="density" unit="g/cm3" value="0.0012"/>
       <fraction n="0.754" ref="N"/>
       <fraction n="0.234" ref="O"/>
       <fraction n="0.012" ref="Ar"/>
-      <property name="RINDEX"        ref="RINDEX__PbWO4"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
     </material>
 
+    <material name="kill_SiPM_right_2">
+      <D type="density" unit="g/cm3" value="0.0012"/>
+      <fraction n="0.754" ref="N"/>
+      <fraction n="0.234" ref="O"/>
+      <fraction n="0.012" ref="Ar"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
+    </material>
 
+    <material name="kill_SiPM_right_3">
+      <D type="density" unit="g/cm3" value="0.0012"/>
+      <fraction n="0.754" ref="N"/>
+      <fraction n="0.234" ref="O"/>
+      <fraction n="0.012" ref="Ar"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
+    </material>
 
-
-
-
-
-  <material name="E_PbWO4">
-    <D value="8.28" unit="g/cm3" />
-    <fraction n="0.45532661" ref="Pb"/>
-    <fraction n="0.40403397" ref="W"/>
-    <fraction n="0.14063942" ref="O"/>
-    <property name="RINDEX"        ref="RINDEX__PbWO4"/>
-      <property name="ABSLENGTH" ref="AbsLen_PbWO4"/>
-      <property name="SCINTILLATIONCOMPONENT1" ref="scintFast_PbWO4"/>
-      <constant name="SCINTILLATIONYIELD" value="0.45/keV"/>
-      <constant name="SCINTILLATIONTIMECONSTANT1" value="5.*ns"/>
-      <constant name="SCINTILLATIONTIMECONSTANT2" value="15.*ns"/>
-      <constant name="SCINTILLATIONRISETIME1" value="0.01*ns"/>
-      <constant name="RESOLUTIONSCALE" value="1."/>
-      <constant name="SCINTILLATIONYIELD1" value="0.3"/> <!-- fraction of scintil in process 1 -->
-  </material>
-
-  <material name="DR_Polystyrene">
-      <D value="1.032" unit="g/cm3"/>
-      <composite n="19" ref="C"/>
-      <composite n="21" ref="H"/>
-      <property name="RINDEX" ref="RI_PS"/>
-      <property name="ABSLENGTH" ref="AbsLen_PS"/>
-      <property name="SCINTILLATIONCOMPONENT1" ref="scintFast_PS"/>
-<!-- correct yield 10000/MeV -->
-      <constant name="SCINTILLATIONYIELD" value="10000/MeV"/>
-      <constant name="SCINTILLATIONTIMECONSTANT1" value="2.8*ns"/>
-      <constant name="RESOLUTIONSCALE" value="1."/>
-  </material>
-
-
-
-  <material name="NS_Polystyrene">
-      <D value="1.032" unit="g/cm3"/>
-      <composite n="19" ref="C"/>
-      <composite n="21" ref="H"/>
-            <property name="RINDEX" ref="RI_PS"/>
-      <property name="ABSLENGTH" ref="AbsLen_PS"/>
-  </material>
-
-
-
-  <material name="DR_Quartz">
-    <D type="density" value="2.2" unit="g/cm3"/>
-    <composite n="1" ref="Si"/>
-    <composite n="2" ref="O"/>
-      <property name="RINDEX" ref="RINDEX__quartz"/>
-      <property name="ABSLENGTH" ref="AbsLen_PS"/>
-  </material>
-
-
-
-<!-- scale factor for scint is -->
-  <material name="BGO">
-    <D value="7.10" unit="g/cm3" />
-    <fraction n="0.67098514" ref="Bi"/>
-    <fraction n="0.17489826" ref="Ge"/>
-    <fraction n="0.15411659" ref="O"/>
-    <property name="RINDEX"        ref="RINDEX__BGO"/>
-      <property name="ABSLENGTH" ref="AbsLen_BGO"/>
-      <property name="SCINTILLATIONCOMPONENT1" ref="scintFast_BGO"/>
-<!--      <constant name="SCINTILLATIONYIELD" value="9./keV"/> -->
-<!-- scale factor for scint is 20 -->
-      <constant name="SCINTILLATIONYIELD" value="0.45/keV"/>
-      <constant name="SCINTILLATIONTIMECONSTANT1" value="300.0*ns"/>
-      <constant name="RESOLUTIONSCALE" value="1."/>
-  </material>
-
-
-  
-  <material name="PbF2">
-    <D value="7.77" unit="g/cm3" />
-    <fraction n="0.84489796" ref="Pb"/>
-    <fraction n="0.15510204" ref="F"/>
-    <property name="RINDEX"        ref="RINDEX__PbF2"/>
-    <property name="ABSLENGTH" ref="AbsLen_PbF2"/>
-  </material>
-
-
-
-  <material name="Brass">
-    <D value="8.73" unit="g/cm3" />
-    <fraction n="0.75" ref="Cu"/>
-    <fraction n="0.25" ref="Zn"/>
-  </material>
-
-
+    <material name="kill_SiPM_right_4">
+      <D type="density" unit="g/cm3" value="0.0012"/>
+      <fraction n="0.754" ref="N"/>
+      <fraction n="0.234" ref="O"/>
+      <fraction n="0.012" ref="Ar"/>
+      <property name="RINDEX"        ref="RINDEX__ResWin"/>
+    </material>
 
     <material name="Silicone_gap">
       <D type="density" unit="g/cm3" value="0.965"/>
@@ -1017,20 +991,92 @@
       <fraction n="0.006" ref="H"/>      
       <property name="RINDEX"        ref="RINDEX__ResWin"/>
     </material>
+    <!--Check mass fractions - these are not the correct ones -->
 
+    <material name="Teflon_wrap">
+      <D type="density" unit="g/cm3" value="0.965"/>
+      <fraction n="0.754" ref="Si"/>
+      <fraction n="0.234" ref="O"/>
+      <fraction n="0.006" ref="C"/>
+      <fraction n="0.006" ref="H"/>      
+      <property name="RINDEX"        ref="RINDEX__Teflon"/>
+    </material>
+    <!--Check mass fractions - these are not the correct ones -->
+
+    <material name="UG11_filter">
+      <D type="density" unit="g/cm3" value="2.92"/>
+      <fraction n="0.754" ref="Si"/>
+      <fraction n="0.234" ref="O"/>
+      <fraction n="0.006" ref="C"/>
+      <fraction n="0.006" ref="H"/>      
+      <property name="RINDEX"        ref="RINDEX__UG11_filter"/>
+    </material>
+    <!--Check mass fractions and composition - these are not the correct ones -->    
+    
+    <material name="GG475_filter">
+      <D type="density" unit="g/cm3" value="2.56"/>
+      <fraction n="0.754" ref="Si"/>
+      <fraction n="0.234" ref="O"/>
+      <fraction n="0.006" ref="C"/>
+      <fraction n="0.006" ref="H"/>      
+      <property name="RINDEX"        ref="RINDEX__GG475_filter"/>
+    </material>
+    <!--Check mass fractions and composition - these are not the correct ones -->     
+
+
+<!-- danger danger will robinson using values for polystyrene -->
+  <material name="E_PbWO4">
+    <D value="8.28" unit="g/cm3" />
+    <fraction n="0.45532661" ref="Pb"/>
+    <fraction n="0.40403397" ref="W"/>
+    <fraction n="0.14063942" ref="O"/>
+    <property name="RINDEX"        ref="RINDEX__PbWO4"/>
+      <property name="ABSLENGTH" ref="AbsLen_PbWO4"/>
+      <property name="SCINTILLATIONCOMPONENT1" ref="scintFast_PbWO4"/>
+      <constant name="SCINTILLATIONYIELD" value="0.45/keV"/>
+      <constant name="SCINTILLATIONTIMECONSTANT1" value="5.*ns"/>
+      <constant name="SCINTILLATIONTIMECONSTANT2" value="15.*ns"/>
+      <constant name="SCINTILLATIONRISETIME1" value="0.01*ns"/>
+      <constant name="RESOLUTIONSCALE" value="1."/>
+      <constant name="SCINTILLATIONYIELD1" value="0.3"/>
+  </material>
+
+
+  <material name="BGO">
+    <D value="7.10" unit="g/cm3" />
+    <fraction n="0.67098514" ref="Bi"/>
+    <fraction n="0.17489826" ref="Ge"/>
+    <fraction n="0.15411659" ref="O"/>
+    <property name="RINDEX"        ref="RINDEX__BGO"/>
+      <property name="ABSLENGTH" ref="AbsLen_BGO"/>
+      <property name="SCINTILLATIONCOMPONENT1" ref="scintFast_BGO"/>
+      <constant name="SCINTILLATIONYIELD" value="9./keV"/>
+      <constant name="SCINTILLATIONTIMECONSTANT1" value="2.8*ns"/>
+      <constant name="RESOLUTIONSCALE" value="1."/>
+  </material>
   
+  <material name="PbF2">
+    <D value="7.77" unit="g/cm3" />
+    <fraction n="0.84489796" ref="Pb"/>
+    <fraction n="0.15510204" ref="F"/>
+    <property name="RINDEX"        ref="RINDEX__PbF2"/>
+    <property name="ABSLENGTH" ref="AbsLen_PbF2"/>
+  </material>
+
 
 </materials>
 
 
   
-  
+  <define>
+    <include ref="SCEPCALConstants.xml"/>
+  </define>
 
 <limits>
     <limitset name="cal_limits">
       <limit name="step_length_max" particles="*" value="100.0" unit="mm" />
     </limitset>
- </limits>
+  </limits>
 
 
 
@@ -1047,29 +1093,18 @@
 
 
 
-<comment> some generic readouts </comment>
-  <readouts>
- <readout name="DRCNoSegment">
-      <segmentation type="NoSegmentation"/>
-      <id>system:3,ix:-7,iy:-7,slice:3,layer:3,wc:3</id>
- </readout>
- <readout name="DRUNoSegment">
-      <segmentation type="NoSegmentation"/>
-      <id>system:3,slice:3,layer:3,repeat:3</id>
- </readout>
-<readout name="DRFNoSegment">
-      <segmentation type="NoSegmentation"/>
-      <id>system:8,layer:12,tube:12,hole:3,type:3</id>
-</readout>
- <readout name="DRSNoSegment">
-      <segmentation type="NoSegmentation"/>
-      <id>system:3,iy:12,ix:12,layer:12,box2:2,type:4</id>
- </readout>
- <readout name="EdgeDetNoSegment">
-      <segmentation type="NoSegmentation"/>
-      <id>system:3,side:3</id>
-    </readout>
-  </readouts>
+
+
+
+
+
+
+  <comment>EM Calorimeters</comment>
+  <include ref="SCEPCAL_ECAL.xml"/> 
+
+
+
+
 
 
 
